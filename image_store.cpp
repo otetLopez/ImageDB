@@ -27,10 +27,10 @@ int main(int argc, char *argv[])
     }
 
     //Get Database details
-    cout << "Enter database user: ";
-    cin >> uname;
-    cout << "Enter database password: ";
-    cin >> pwd;
+    // cout << "Enter database user: ";
+    // cin >> uname;
+    // cout << "Enter database password: ";
+    // cin >> pwd;
     cout << "Enter database name: ";
     cin >> db_name;
     cout << "Enter table name: ";
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     mysql_init(&mysql);
 
     //Establish MySQL Connection
-    connection = mysql_real_connect(&mysql,"127.0.0.1",uname.c_str(),pwd.c_str(),db_name.c_str(),0,0,0);
+    connection = mysql_real_connect(&mysql,"127.0.0.1","root","",db_name.c_str(),0,0,0);
     if (connection == NULL)
     {
         std::cout << mysql_error(&mysql) << std::endl;
